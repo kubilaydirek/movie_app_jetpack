@@ -56,7 +56,7 @@ dependencies {
 
     //Material Icon
     implementation("androidx.compose.material:material-icons-core:1.6.8")
-    implementation("androidx.compose.material:material-icons-extended:1.6.8:1.6.8")
+    implementation("androidx.compose.material:material-icons-extended:1.6.8")
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

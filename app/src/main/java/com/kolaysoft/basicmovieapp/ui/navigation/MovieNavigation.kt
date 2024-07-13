@@ -1,5 +1,6 @@
 package com.kolaysoft.basicmovieapp.ui.navigation
 
+import HomeScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,7 +12,7 @@ fun MovieNavigation() {
 
     NavHost(navController = navController, startDestination = MovieScreens.HomeScreen.name) {
         composable(MovieScreens.HomeScreen.name) {
-
+            HomeScreen(navController)
         }
         composable(MovieScreens.DetailScreen.name) {
 

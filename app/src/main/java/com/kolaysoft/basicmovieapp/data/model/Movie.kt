@@ -1,7 +1,5 @@
 import com.kolaysoft.basicmovieapp.data.model.MovieItem
 
-class Movie : ArrayList<MovieItem>()
-
 fun getDummyMovie(): ArrayList<MovieItem> {
     return arrayListOf(
         MovieItem(

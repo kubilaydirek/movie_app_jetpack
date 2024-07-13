@@ -44,6 +44,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.kolaysoft.basicmovieapp.data.model.MovieItem
+import com.kolaysoft.basicmovieapp.ui.navigation.MovieScreens
 import com.kolaysoft.basicmovieapp.ui.theme.Color2Beige
 import com.kolaysoft.basicmovieapp.ui.theme.Color2Blue
 import com.kolaysoft.basicmovieapp.ui.theme.Color2Green
@@ -73,8 +74,13 @@ fun HomeScreen(navController: NavController) {
 @Composable
 fun MovieContent(navController: NavController, movieList: ArrayList<MovieItem> = getDummyMovie()) {
     LazyColumn {
-        items(movieList) {
-            MovieRow(it)
+        items(movieList) { movieItem ->
+            MovieRow(
+                movieItem = movieItem,
+                onItemClick = {
+                    navController.navigate(route = MovieScreens.DetailScreen.name + "/$it")
+                },
+            )
         }
     }
 }

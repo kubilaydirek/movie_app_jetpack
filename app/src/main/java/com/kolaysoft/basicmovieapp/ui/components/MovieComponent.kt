@@ -19,15 +19,18 @@ fun MovieCircleImage(modifier: Modifier = Modifier, imageUrl: String) {
 
 }
 
+
 @Composable
-fun MovieRectangleImage(modifier: Modifier = Modifier, imageUrl: String) {
+fun MovieRectangleImage(imageUrl: String) {
     val painter = rememberAsyncImagePainter(
-        model = ImageRequest.Builder(LocalContext.current).data(imageUrl).size(Size.ORIGINAL)
-            .transformations(CircleCropTransformation()).crossfade(true).build()
+        model = ImageRequest.Builder(LocalContext.current)
+            .data(imageUrl)
+            .size(Size.ORIGINAL)
+            .crossfade(true)
+            .build()
     )
 
     Image(painter = painter, contentDescription = "")
-
 }
 
 @Composable
